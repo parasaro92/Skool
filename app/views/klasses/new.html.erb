@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Add New House</h1>
+  <%= simple_form_for @klass do |f| %>
+  <%= f.input :name, required: true %>
+  <%= f.submit "Add House", class: "btn btn-primary" %>
+  <%= link_to "Cancel", klasses_path, class: "btn btn-primary" %>
+  <% end %>
+</div>
