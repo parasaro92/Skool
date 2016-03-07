@@ -11,12 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307180252) do
+ActiveRecord::Schema.define(version: 20160307201525) do
+
+  create_table "houses", force: :cascade do |t|
+    t.integer  "klass_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "houses", ["klass_id"], name: "index_houses_on_klass_id"
 
   create_table "klasses", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "standards", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "klass_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "standards", ["klass_id"], name: "index_standards_on_klass_id"
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.string   "fathers_name"
+    t.integer  "gender"
+    t.date     "dob"
+    t.string   "phone"
+    t.text     "address"
+    t.integer  "standard_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "students", ["standard_id"], name: "index_students_on_standard_id"
 
 end

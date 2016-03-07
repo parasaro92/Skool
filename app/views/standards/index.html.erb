@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Standards</h1>
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @standards.each do |standard| %>
+    <tr>
+      <td><%= link_to standard.name, klass_standards_path %></td>
+      <td><%= link_to "Edit", edit_klass_standard_path(@klass, standard), class: "btn btn-default" %></td>
+      <td><%= link_to "Delete", klass_standard_path(@klass, standard), class: "btn btn-default", method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add New Standard", new_klass_standard_path(@klass), class: "btn btn-primary" %>
+</div>
