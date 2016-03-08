@@ -11,6 +11,7 @@
 
 class Standard < ActiveRecord::Base
   belongs_to :klass
+  has_many :students
 
   validates(:name, presence: true)
 end

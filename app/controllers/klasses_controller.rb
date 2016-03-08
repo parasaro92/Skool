@@ -29,8 +29,8 @@ class KlassesController < ApplicationController
   end
 
   def create
-    @house = Klass.new(klass_params)
-    if @house.save
+    @klass = Klass.new(klass_params)
+    if @klass.save
       redirect_to klasses_path
     else
       render :new

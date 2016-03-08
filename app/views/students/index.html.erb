@@ -1,0 +1,38 @@
+
+<div class="container">
+
+  <h1>Students</h1>
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Standard Name</th>
+        <th>Date of Birth</th>
+        <th>Father's Name</th>
+        <!-- <th>Emergency Contact</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student| %>
+      <tr>
+        <td><%= student.id %></td>
+        <td><%= student.name %></td>
+        <td><%= student.address %></td>
+        <td><%= student.standard_id %></td>
+        <td><%= student.dob %></td>
+        <td><%= student.fathers_name %></td>
+        <td><%= link_to "Delete", klass_standard_student_path(@klass, @standard, student), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default" %></td>
+        <td><%= link_to "Edit", edit_klass_standard_student_path(@klass, @standard, student), class: "btn btn-default" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% if params[:standard_id] %>
+    <%= link_to "Add New Student", new_klass_standard_student_path, class: "btn btn-primary" %>
+    <%= link_to "Back", :back, class: "btn btn-primary" %>
+  <% else %>
+    <%= link_to "Add New Student", new_klass_standard_student_path, class: "btn btn-primary" %>
+  <% end %>
+</div>

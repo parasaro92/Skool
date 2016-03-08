@@ -11,9 +11,10 @@
   <tbody>
     <% @standards.each do |standard| %>
     <tr>
-      <td><%= link_to standard.name, klass_standards_path %></td>
+      <td><%= link_to standard.name, klass_standard_students_path(standard_id: standard.id) %></td>
       <td><%= link_to "Edit", edit_klass_standard_path(@klass, standard), class: "btn btn-default" %></td>
       <td><%= link_to "Delete", klass_standard_path(@klass, standard), class: "btn btn-default", method: :delete, data: {confirm: "Are you sure?"} %></td>
+      <td><%= link_to "Attendance", klass_standard_student_attendances_index_path(standard_id: standard.id), class: "btn btn-primary" %></td>
     </tr>
     <% end %>
   </tbody>
