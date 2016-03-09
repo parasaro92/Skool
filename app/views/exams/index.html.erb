@@ -1,0 +1,40 @@
+<h2>Exams <% @exams.each do |exam| %>
+      <%= link_to content_tag(:i, '', class: "fa fa-pencil-square fa-lg"), edit_klass_standard_student_exam_path(@klass, @standard, @student, exam) %>
+    <% end %>
+</h2> 
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <h4 class="panel-heading text-center">Final Exam </h4>
+    
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Subject Name</th>
+        <th>Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @exams.each do |exam| %>
+        <tr>
+          <td>exam.subject_name</td>
+          <td>exam.marks</td>
+        </tr>
+        <tr>
+          <td>English</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Science</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Hindi</td>
+          <td></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to "Add New Exam", new_klass_standard_student_exam_path, class: "btn btn-primary" %>

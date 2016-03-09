@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: exams
+#
+#  id           :integer          not null, primary key
+#  subject_name :string
+#  marks        :integer
+#  total        :integer
+#  student_id   :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject_name: MyString
+  marks: 1
+  total: 1
+  student_id: 
+
+two:
+  subject_name: MyString
+  marks: 1
+  total: 1
+  student_id: 

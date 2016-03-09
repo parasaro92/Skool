@@ -17,6 +17,7 @@
 class Student < ActiveRecord::Base
   belongs_to :standard
   has_many :attendance
+  has_many :exam
 
   validates(:name, presence: true)
   validates(:address, presence: true)

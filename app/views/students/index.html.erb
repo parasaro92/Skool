@@ -7,22 +7,24 @@
       <tr>
         <th>Student ID</th>
         <th>Name</th>
-        <th>Address</th>
-        <th>Standard Name</th>
+        <!-- <th>Standard Name</th> -->
         <th>Date of Birth</th>
-        <th>Father's Name</th>
-        <!-- <th>Emergency Contact</th> -->
+        <th>Date</th>
+        <th>Attendance</th>
       </tr>
     </thead>
     <tbody>
       <% @students.each do |student| %>
       <tr>
         <td><%= student.id %></td>
-        <td><%= student.name %></td>
-        <td><%= student.address %></td>
-        <td><%= student.standard_id %></td>
+        <td><%= link_to student.name, klass_standard_student_exams_path(@klass, @standard, student) %></td>
+        <!-- <td><%= student.standard.name %></td> -->
         <td><%= student.dob %></td>
-        <td><%= student.fathers_name %></td>
+        <td><%= Date.current().readable_inspect() %></td>
+        <td><label class="checkbox-inline">
+          <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+          </label> 
+        </td>
         <td><%= link_to "Delete", klass_standard_student_path(@klass, @standard, student), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-default" %></td>
         <td><%= link_to "Edit", edit_klass_standard_student_path(@klass, @standard, student), class: "btn btn-default" %></td>
       </tr>

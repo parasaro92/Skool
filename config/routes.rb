@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :standards do
       resources :students do
         get 'attendances/index'
+        resources :exams
       end
     end
   end

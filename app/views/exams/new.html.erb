@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Add Exam Marks</h1>
+  <%= simple_form_for [@klass, @standard, @student, @exam] do |f|%>
+    <%= f.input :subject_name, required: true %>
+    <%= f.input :marks, required: true %>
+    <%= f.submit "Add New Exam", class: "btn btn-primary" %>
+    <%= link_to "Cancel", klass_standard_student_exams_path, class: "btn btn-primary"%>
+  <% end %>
+</div>
